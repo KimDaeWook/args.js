@@ -131,5 +131,38 @@ function size(w, h) {
 ```
 
 ##ArgsJS.Build
-`ArgsJS.Build` is advanced function for argument management. 
+`ArgsJS.Build` is base function for arguments mapping. `ArgsJS.Build` is provide argument mapping object.
+```javascript
+function CreateRectWithBuild(a, b, c, d) {
+    var buildResult = ArgsJS.Build({
+        bounds: { x: ArgsJS.Number, y: ArgsJS.Number, w: ArgsJS.Number, h: ArgsJS.Number },
+        size: { w: ArgsJS.Number, h: ArgsJS.Number },
+    });
+
+    var json = JSON.stringify(buildResult);
+    console.log(json);
+}
+```
+####ArgsJS.Build Result
+```javascript
+{  
+   "_ArgsJS_Case":"bounds",
+   "x":{  
+      "argumentIndex":0,
+      "value":10
+   },
+   "y":{  
+      "argumentIndex":1,
+      "value":10
+   },
+   "w":{  
+      "argumentIndex":2,
+      "value":100
+   },
+   "h":{  
+      "argumentIndex":3,
+      "value":100
+   }
+}
+```
 
