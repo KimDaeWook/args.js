@@ -111,5 +111,25 @@ eval(mapResult);
 
 
 ##ArgsJS.Redirect
+`ArgsJS.Redirect` can redirect a function depending on the condition of the mapped.
+
+```javascript
+function CreateRectWithRedirect(a, b, c, d) {
+    return ArgsJS.Redirect(this, {
+        bounds: { x: ArgsJS.Number, y: ArgsJS.Number, w: ArgsJS.Number, h: ArgsJS.Number },
+        size: { w: ArgsJS.Number, h: ArgsJS.Number },
+    });
+}
+
+function bounds(x, y, w, h) {
+    return new Rect(x, y, w, h);
+}
+
+function size(w, h) {
+    return new Rect(0, 0, w, h);
+}
+```
 
 ##ArgsJS.Build
+`ArgsJS.Build` is advanced function for argument management. 
+
