@@ -3,7 +3,9 @@ args.js
 
 
 The Args.js the Javascript argument mapping library. 
-basically, javascript can't support function overload. so developer using unknown name parameter or parameter object for various features function.
+basically, javascript can't support function overload. So unknown name parameter developers are using. 
+but, If the parameter name is not correct, it is difficult to understand the code. like the code below.
+
 
 ### Unknown name parameter example
 
@@ -39,14 +41,17 @@ function CreateRect(a, b, c, d) {
 }
 ```
 
-### Using Args.JS
+Args.JS is can map arguments using simple syntax. 
+developer just assign parameters cases with parameter predictors. can be used named parameters.
+
+### Using Args.JS example
 
 ```javascript
 function CreateRectWithArgsJS(a, b, c, d) {
             
     eval(ArgsJS.Map({
         bounds: { x: ArgsJS.Number, y: ArgsJS.Number, w: ArgsJS.Number, h: ArgsJS.Number },
-        strbounds: { x: ArgsJS.String, y: ArgsJS.String, w: ArgsJS.String, h: ArgsJS.String },
+        strBounds: { x: ArgsJS.String, y: ArgsJS.String, w: ArgsJS.String, h: ArgsJS.String },
         size: { w: ArgsJS.Number, h: ArgsJS.Number },
         uniform: { wh: ArgsJS.Number },
         object: { rect: ArgsJS.Object },
@@ -56,7 +61,7 @@ function CreateRectWithArgsJS(a, b, c, d) {
     switch (arguments.case) {
         case "bounds" :
             return new Rect(x, y, w, h);
-        case "strbounds":
+        case "strBounds":
             return new Rect(parseInt(x), parseInt(y), parseInt(w), parseInt(h));
         case "size" :
             return new Rect(0, 0, w, h);
