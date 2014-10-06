@@ -145,12 +145,12 @@ function CreateRectWithBuild(a, b, c, d) {
 ```
 ####ArgsJS.Build Result
 ```javascript
-{  
-   "_ArgsJS_Case":"bounds",
-   "x":{ "argumentIndex":0, "value":10 },
-   "y":{ "argumentIndex":1, "value":10 },
-   "w":{ "argumentIndex":2, "value":100 },
-   "h":{ "argumentIndex":3, "value":100 }
+{
+    "_ArgsJS_Case":"bounds",
+    "x":{ "argumentIndex":0, "value":10 },
+    "y":{ "argumentIndex":1, "value":10 },
+    "w":{ "argumentIndex":2, "value":100 },
+    "h":{ "argumentIndex":3, "value":100 }
 }
 ```
 
