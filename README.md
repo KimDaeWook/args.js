@@ -1,4 +1,4 @@
-args.js
+Args.js
 =======
 
 
@@ -76,3 +76,41 @@ function CreateRectWithArgsJS(a, b, c, d) {
     return null;
 }
 ```
+=======
+#References
+
+##ArgsJS.Map
+`ArgsJS.Map` method provide to named parameters from unknown name parameter.
+`ArgsJS.Map` is always used with the eval function. because, return value of ArgsJS.Map is the source code for argument mapping.
+
+####ArgsJS.Map return value
+
+```javascript
+CreateRectWithArgsJS(10, 10, 100, 100);
+
+var mapResult = ArgsJS.Map({
+    bounds: { x: ArgsJS.Number, y: ArgsJS.Number, w: ArgsJS.Number, h: ArgsJS.Number },
+});
+
+// console.log(x) => undefine
+// console.log(y) => undefine
+
+/*  console.log(mapResult)
+    ============================================
+    var x = arguments[0];
+    var y = arguments[1];
+    var w = arguments[2];
+    var h = arguments[3];
+    ============================================
+*/
+eval(mapResult);
+
+// console.log(x) => 10
+// console.log(y) => 10
+```
+so, using `eval` function for evaluate to `ArgsJS.Map` result.
+
+
+##ArgsJS.Redirect
+
+##ArgsJS.Build
